@@ -91,7 +91,7 @@ spec:
           imagePullPolicy: Always
           name: container-124
           volumeMounts:
-            - mountPath: /testing
+          - mountPath: /testing
             name: test-volume
           resources: {}
           securityContext:

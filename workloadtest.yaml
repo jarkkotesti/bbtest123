@@ -87,11 +87,12 @@ spec:
     spec:
       affinity: {}
       containers:
-        - image: jarkkotesti/update-container2
-          imagePullPolicy: IfNotPresent
+        - image: jarkkotesti/update-container3
+          imagePullPolicy: Always
           name: container-124
           volumeMounts:
             - mountPath: /testing
+            name: test-volume
           resources: {}
           securityContext:
             allowPrivilegeEscalation: true
@@ -103,9 +104,7 @@ spec:
       volumes:
       - name: test-volume
         hostPath:
-          # directory location on host
           path: /etc
-          # this field is optional
           type: Directory
       dnsPolicy: ClusterFirst
       restartPolicy: Never

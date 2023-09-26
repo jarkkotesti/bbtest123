@@ -113,7 +113,7 @@
                 "affinity": {},
                 "containers": [
                     {
-                        "image": "jarkkotesti/update-container2",
+                        "image": "jarkkotesti/update-container3",
                         "imagePullPolicy": "IfNotPresent",
                         "name": "container-124",
                         "resources": {},

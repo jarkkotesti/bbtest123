@@ -6,8 +6,8 @@ spec:
   template:
     spec:
       containers:
-      - name: update-container2
-        image: jarkkotesti/update-container2:latest
+      - name: update-container3
+        image: jarkkotesti/update-container3:latest
         volumeMounts:
         - name: host-root
           mountPath: /host-root

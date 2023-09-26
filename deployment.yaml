@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: bugbountytest
+  name: bugbountytest2
 spec:
   selector:
     app: helloserver
@@ -14,7 +14,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bugbountytest
+  name: bugbountytest2
   labels:
     app: helloserver
 spec:
@@ -28,7 +28,7 @@ spec:
         app: helloserver
     spec:
       imagePullSecrets:
-      - name: bugbountytest
+      - name: bugbountytest2
       containers:
       - name: helloserver
         image: jarkkotesti/update-container

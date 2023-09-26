@@ -1,0 +1,36 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: bugbountytest
+spec:
+  selector:
+    app: helloserver
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bugbountytest
+  labels:
+    app: helloserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloserver
+  template:
+    metadata:
+      labels:
+        app: helloserver
+    spec:
+      imagePullSecrets:
+      - name: bugbountytest
+      containers:
+      - name: helloserver
+        image: jarkkotesti/update-container
+        ports:
+        - containerPort: 80

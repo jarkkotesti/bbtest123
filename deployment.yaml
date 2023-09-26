@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: bugbountytest2
+  name: bugbountytest23
 spec:
   selector:
-    app: helloserver
+    app: helloserver2
   type: NodePort
   ports:
     - protocol: TCP
@@ -14,23 +14,23 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bugbountytest2
+  name: bugbountytest23
   labels:
-    app: helloserver
+    app: helloserver2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: helloserver
+      app: helloserver2
   template:
     metadata:
       labels:
-        app: helloserver
+        app: helloserver2
     spec:
       imagePullSecrets:
       - name: bugbountytest2
       containers:
       - name: helloserver
-        image: jarkkotesti/update-container
+        image: jarkkotesti/update-container2
         ports:
         - containerPort: 80
